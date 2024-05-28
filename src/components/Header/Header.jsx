@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Header.scss'
 
 const Header = () => {
   return (
@@ -12,6 +13,7 @@ const Header = () => {
       <Link to='/register'>Register</Link>
     </nav>
   )
+  
 }
 
 export default Header

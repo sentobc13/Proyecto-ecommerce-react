@@ -1,0 +1,44 @@
+$menu-bg-color: #333;
+$menu-text-color: white;
+$menu-padding: 1rem;
+$nav-link-padding: 0.5rem 1rem;
+$nav-link-hover-bg-color: #575757;
+$nav-link-active-bg-color: #4CAF50;
+$mobile-breakpoint: 768px;
+
+.menu {
+  background-color: $menu-bg-color;
+  padding: $menu-padding;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  a {
+    color: $menu-text-color;
+    text-decoration: none;
+    padding: $nav-link-padding;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $nav-link-hover-bg-color;
+      border-radius: 5px;
+    }
+
+    &:active {
+      background-color: $nav-link-active-bg-color;
+      border-radius: 5px;
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    a {
+      padding: 0.5rem 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
