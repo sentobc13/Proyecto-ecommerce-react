@@ -9,7 +9,6 @@ const Products = () => {
     
   }, []);
 
-
   return (
     <>
     <Product products = {products}/>
