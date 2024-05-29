@@ -14,7 +14,7 @@ const API_URL = "http://localhost:3000/users";
 
 export const UserContext = createContext(initialState);
 
-export const UserProvider = ({children}) => {
+export const UserProvider = ({ children }) => {
     const [state, dispatch] = useReducer(UserReducer, initialState);
 
     const login = async (user) => {
@@ -33,25 +33,43 @@ export const UserProvider = ({children}) => {
             API_URL + "/",
             {
                 headers: {
-                    authorization: token, 
+                    authorization: token,
                 },
             }
         );
-        dispatch ({
+        dispatch({
             type: "GET_USER_INFO",
             payload: res.data
         })
     }
+    const logout = async () => {
+        const token = localStorage.getItem("token");
+        const res = await axios.delete(API_URL + "/logout",
+            {
+                headers: {
+                    authorization: token,
+                },
+            });
+        dispatch({
+            type: "LOGOUT",
+            payload: res.data,
+        });
+        if (res.data) {
+            localStorage.removeItem("token");
+
+        }
+    }
     return (
         <UserContext.Provider
-        value = {{
-            token: state.token,
-            user: state.user,
-            login,
-            getUserInfo
-        }}
-       >
-        {children}
-       </UserContext.Provider> 
+            value={{
+                token: state.token,
+                user: state.user,
+                login,
+                getUserInfo,
+                logout
+            }}
+        >
+            {children}
+        </UserContext.Provider>
     );
 };
