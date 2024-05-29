@@ -1,11 +1,17 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './Header.scss'
 import { UserContext } from '../../context/UserContext/UserState'
+import { ProductsContext } from '../../context/ProductsContext/ProductsState'
 
 const Header = () => {
   const { token, logout } = useContext(UserContext);
-  const navigate = useNavigate()
+  const { cart } = useContext(ProductsContext)
+  const navigate = useNavigate();
+  
+  useEffect(()=>{
+    localStorage.setItem("cart",JSON.stringify(cart))
+  },[cart])
 
   const logoutUser = () => {
       logout();

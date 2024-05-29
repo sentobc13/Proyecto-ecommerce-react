@@ -13,7 +13,6 @@ const Product = (props) => {
             <Meta title={product.name} description={product.price} />
             <p>description:{product.description}</p>
             <p>size:{product.size}</p>
-            <Button onClick={()=> addCart(product)}/>
         </Card>
     })
 
