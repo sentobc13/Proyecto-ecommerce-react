@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart'
 import Register from './components/Register/Register'
 import Home from './components/Home/Home'
 import { ProductsProvider } from './context/ProductsContext/ProductsState'
+import { UserProvider } from './context/UserContext/UserState'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <ProductsProvider>
+        <UserProvider>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -28,6 +30,7 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
+        </UserProvider>
       </ProductsProvider>
     </>
   )
