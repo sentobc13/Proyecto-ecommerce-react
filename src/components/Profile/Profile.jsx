@@ -1,8 +1,20 @@
-import React from 'react'
+import { useContext, useEffect } from 'react'
+import { UserContext } from '../../context/UserContext/UserState'
 
 const Profile = () => {
+  const {getUserInfo, user} = useContext(UserContext);
+
+  useEffect(() =>{
+    getUserInfo();
+  }, []);
+
+  if (!user) {
+    return <span> Loading...</span>
+    
+  }
   return (
-    <div>Profile</div>
+
+    <div>Profile {user.name}</div>
   )
 }
 
