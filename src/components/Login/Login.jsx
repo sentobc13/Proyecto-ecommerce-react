@@ -1,13 +1,15 @@
 import { useContext } from 'react'
 import { UserContext } from '../../context/UserContext/UserState';
 import { Button, Form, Input } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const { login } = useContext(UserContext);
+const navigate = useNavigate()
 
   const onFinish = (values) => {
     login(values)
-    console.log(values);
+    navigate("/profile")
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed", errorInfo);
