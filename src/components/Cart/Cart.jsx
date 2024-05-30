@@ -3,6 +3,7 @@ import { ProductsContext } from '../../context/ProductsContext/ProductsState';
 import { Button, Empty } from 'antd';
 import { Link } from 'react-router-dom';
 import './Cart.scss'
+import orderService from '../../services/OrderServices';
 
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductsContext); // Suponiendo que clearCart está disponible en el contexto
@@ -30,6 +31,10 @@ const Cart = () => {
       <div className="cart-items">
         {cartItems}
       </div>
+      <Button type="primary" onClick={()=>{
+        orderService.createOrder(cart)
+        clearCart()
+      }}>Create Order</Button>
       <Button type="primary" onClick={clearCart}>Clear Cart</Button>
     </div>
   );

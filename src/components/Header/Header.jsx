@@ -34,9 +34,6 @@ const Header = () => {
         </span>
         {token ? (
           <>
-            <span onClick={logoutUser}>
-              <Link to="/">Logout</Link>
-            </span>
             <span>
               <Link to="/profile">Profile</Link>
             </span>
@@ -45,6 +42,9 @@ const Header = () => {
             </span>
             <span>
               <Link to='/register'>Register</Link>
+            </span>
+            <span onClick={logoutUser}>
+              <Link to="/">Logout</Link>
             </span>
           </>
         ) : (
