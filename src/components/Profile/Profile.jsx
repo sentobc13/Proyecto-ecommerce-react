@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { UserContext } from '../../context/UserContext/UserState'
+import { Spin } from 'antd';
 
 const Profile = () => {
   const {getUserInfo, user, token} = useContext(UserContext);
@@ -9,7 +10,7 @@ const Profile = () => {
   }, [token]);
 
   if (!user) {
-    return <span> Loading...</span>
+    return  <Spin size="large" />
     
   }
   return (
