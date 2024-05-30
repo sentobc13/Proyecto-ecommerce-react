@@ -1,0 +1,19 @@
+
+footer {
+  background-color: $primary-color;
+  color: $text-color;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  a {
+    color: $secondary-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

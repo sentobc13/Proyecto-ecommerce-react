@@ -40,17 +40,19 @@ const Header = () => {
             <span>
               <Link to='/cart'>Cart<Badge count={cart.length} size='small'><ShoppingCartOutlined/></Badge></Link>
             </span>
-            <span>
-              <Link to='/register'>Register</Link>
-            </span>
             <span onClick={logoutUser}>
               <Link to="/">Logout</Link>
             </span>
           </>
         ) : (
+          <>
+            <span>
+              <Link to='/register'>Register</Link>
+            </span>
           <span>
             <Link to="/login">Login</Link>
           </span>
+          </>
         )}
       </div>
     </nav>

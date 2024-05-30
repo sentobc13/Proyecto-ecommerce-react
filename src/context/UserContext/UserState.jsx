@@ -24,24 +24,36 @@ export const UserProvider = ({ children }) => {
                 type: "LOGIN",
                 payload: res.data,
             });
-            console.log('hola');
 
             if (res.data) {
-                console.log(res.data.token);
                 localStorage.setItem("token", res.data.token);
             }
         } catch (error) {
-            console.log('adios');
 
             console.error(error);
         }
-    };
+    }
+
+    const register = async (user) => {
+        try {
+            const res = await axios.post(API_URL + "/", user);
+            dispatch({
+                type: "REGISTER",
+                payload: res.data,
+            });
+
+            return res.data
+
+        } catch (error) {
+
+            console.error(error);
+        }
+    }
+
     const getUserInfo = async () => {
         const token = localStorage.getItem("token");
-        console.log('token');
         try {
-            const res = await axios.get(
-                API_URL + "/",
+            const res = await axios.get(API_URL + "/",
                 {
                     headers: {
                         authorization: token,
@@ -57,6 +69,7 @@ export const UserProvider = ({ children }) => {
             console.error(error);
         }
     }
+
     const logout = async () => {
         const token = localStorage.getItem("token");
         const res = await axios.delete(API_URL + "/logout",
@@ -80,6 +93,7 @@ export const UserProvider = ({ children }) => {
                 token: state.token,
                 user: state.user,
                 login,
+                register,
                 getUserInfo,
                 logout
             }}

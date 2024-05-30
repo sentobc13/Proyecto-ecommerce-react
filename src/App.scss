@@ -1,0 +1,26 @@
+
+@import './colors.scss';
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: 'Arial', sans-serif;
+}
+
+.menu {
+  background-color: $primary-color;
+  a {
+    color: $text-color;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.button {
+  background-color: $button-color;
+  color: white;
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
