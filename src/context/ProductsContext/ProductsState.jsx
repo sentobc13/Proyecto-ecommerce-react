@@ -28,6 +28,11 @@ const addCart = (product) => {
     payload: product,
   });
 }
+const clearCart =()=> {
+  dispatch({
+    type:"CLEAR_CART"
+  })
+}
   
 
   return (
@@ -36,7 +41,8 @@ const addCart = (product) => {
         products: state.products,
         cart: state.cart,
         getProducts,
-        addCart
+        addCart,
+        clearCart
       }}>
         {children}
 

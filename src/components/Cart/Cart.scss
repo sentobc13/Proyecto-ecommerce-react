@@ -1,0 +1,23 @@
+.cart {
+    padding: 16px;
+  
+    .cart-items {
+      margin-bottom: 16px;
+    }
+  
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+  
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+  
+    button {
+      margin-top: 16px;
+    }
+  }
+  

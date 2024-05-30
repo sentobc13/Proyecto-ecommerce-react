@@ -3,31 +3,34 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Header.scss'
 import { UserContext } from '../../context/UserContext/UserState'
 import { ProductsContext } from '../../context/ProductsContext/ProductsState'
+import { ShoppingCartOutlined } from '@ant-design/icons'
+import { Badge } from 'antd'
+
 
 const Header = () => {
   const { token, logout } = useContext(UserContext);
   const { cart } = useContext(ProductsContext)
   const navigate = useNavigate();
-  
-  useEffect(()=>{
-    localStorage.setItem("cart",JSON.stringify(cart))
-  },[cart])
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }, [cart])
 
   const logoutUser = () => {
-      logout();
-      navigate("/")
-    }
-  
+    logout();
+    navigate("/")
+  }
+
   return (
     <nav className="menu">
       <span>
-      <Link to='/'>Logo</Link>
+        <Link to='/'>Logo</Link>
       </span>
       <div>
-        
-        
+
+
         <span>
-        <Link to='/products'>Products</Link>
+          <Link to='/products'>Products</Link>
         </span>
         {token ? (
           <>
@@ -38,10 +41,10 @@ const Header = () => {
               <Link to="/profile">Profile</Link>
             </span>
             <span>
-              <Link to='/cart'>Cart</Link>
+              <Link to='/cart'>Cart<Badge count={cart.length} size='small'><ShoppingCartOutlined/></Badge></Link>
             </span>
             <span>
-            <Link to='/register'>Register</Link>
+              <Link to='/register'>Register</Link>
             </span>
           </>
         ) : (
