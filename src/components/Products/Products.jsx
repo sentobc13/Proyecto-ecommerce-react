@@ -3,7 +3,7 @@ import { ProductsContext } from '../../context/ProductsContext/ProductsState'
 import Product from './Product';
 
 const Products = () => {
-  const { products, getProducts } = useContext(ProductsContext);
+  const { getProducts } = useContext(ProductsContext);
   useEffect(() => {
     getProducts();
     
@@ -11,7 +11,7 @@ const Products = () => {
 
   return (
     <>
-    <Product products = {products}/>
+    <Product />
     </>
   );
 };
