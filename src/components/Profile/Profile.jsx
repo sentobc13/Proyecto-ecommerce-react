@@ -41,19 +41,30 @@ const Profile = () => {
           <div className="card-info">
             <Meta title='Pedidos' />
             <div className='orders-container'>
-              {user.Orders.map( order=>{
-                console.log(order)
-                return(
-                  <p key = {order.id}>Numero de pedido: {order.id}</p>
-                  
-                )
-              })}
+              {
+                user.Orders.map(order => {
+                const productsOrder=  order.Products.map((product)=>{
+                    return(
+                      <p>{product.name}</p>
+                    )
+                  })
+                  return(
+                    <div>
+                      <h3>Numero de pedido: {order.id}</h3>
+                      {productsOrder}
+                    </div>
+                  )
+                }
+
+              )
+              }
             </div>
           </div>
         </Card>
       </div>
     </div>
-  );
+  )
 }
+
 
 export default Profile

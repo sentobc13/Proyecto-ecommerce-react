@@ -1,5 +1,8 @@
-// Footer.scss
+
 .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     background-color: #333;
     color: white;
     text-align: center;
@@ -7,14 +10,14 @@
     font-family: 'Arial', sans-serif;
     width: 100%;
     box-sizing: border-box;
+  }
   
-    .footer-content {
-      padding: 1rem;
+  .footer-content {
+    padding: 1rem;
+  }
   
-      p {
-        margin: 0;
-        font-size: 0.9rem;
-      }
-    }
+  .footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
   }
   
