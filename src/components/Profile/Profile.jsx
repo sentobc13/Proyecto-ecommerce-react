@@ -13,9 +13,13 @@ const Profile = () => {
     return  <Spin size="large" />
     
   }
+  console.log(user);
   return (
 
-    <div>Profile {user.name}</div>
+    <div>
+      Profile {user.name} 
+    </div>
+    
   )
 }
 
