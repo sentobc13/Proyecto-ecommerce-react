@@ -1,26 +1,48 @@
 import { useContext, useEffect } from 'react'
 import { UserContext } from '../../context/UserContext/UserState'
-import { Spin } from 'antd';
+import { Card, Spin } from 'antd';
+import Meta from 'antd/es/card/Meta';
+import './Profile.scss'
 
 const Profile = () => {
-  const {getUserInfo, user, token} = useContext(UserContext);
+  const { getUserInfo, user, token } = useContext(UserContext);
 
-  useEffect(() =>{
+  useEffect(() => {
     getUserInfo();
   }, [token]);
 
   if (!user) {
-    return  <Spin size="large" />
-    
+    return <Spin size="large" />
+
   }
   console.log(user);
   return (
-
-    <div>
-      Profile {user.name} 
+<div className='profile'>
+    <div className="user-card" key={user.id}>
+      <Card
+        hoverable
+        style={{ maxWidth: '300px' }}
+        cover={<img alt={user.name} src={user.image || 'https://via.placeholder.com/150'} />}
+      >
+        <div className="card-info">
+          <Meta title={user.name} />
+          <p className="text-body">Email: {user.email}</p>
+        </div>
+      </Card>
     </div>
-    
-  )
+    <div className="order-card" key={user.id}>
+      <Card
+        hoverable
+        style={{ maxWidth: '300px' }}
+      >
+        <div className="card-info">
+          <Meta title={user.name} />
+          <p className="text-body">Email: {user.email}</p>
+        </div>
+      </Card>
+    </div>
+    </div>
+  );
 }
 
 export default Profile
