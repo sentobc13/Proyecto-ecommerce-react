@@ -7,6 +7,8 @@ import './Profile.scss'
 const Profile = () => {
   const { getUserInfo, user, token } = useContext(UserContext);
 
+
+
   useEffect(() => {
     getUserInfo();
   }, [token]);
@@ -16,31 +18,40 @@ const Profile = () => {
 
   }
   console.log(user);
+
   return (
-<div className='profile'>
-    <div className="user-card" key={user.id}>
-      <Card
-        hoverable
-        style={{ maxWidth: '300px' }}
-        cover={<img alt={user.name} src={user.image || 'https://via.placeholder.com/150'} />}
-      >
-        <div className="card-info">
-          <Meta title={user.name} />
-          <p className="text-body">Email: {user.email}</p>
-        </div>
-      </Card>
-    </div>
-    <div className="order-card" key={user.id}>
-      <Card
-        hoverable
-        style={{ maxWidth: '300px' }}
-      >
-        <div className="card-info">
-          <Meta title={user.name} />
-          <p className="text-body">Email: {user.email}</p>
-        </div>
-      </Card>
-    </div>
+    <div className='profile'>
+      <div className="user-card">
+        <Card
+          hoverable
+          style={{ maxWidth: '300px' }}
+          cover={<img alt={user.name} src={user.image || 'https://via.placeholder.com/150'} />}
+        >
+          <div className="card-info">
+            <Meta title={user.name} />
+            <p className="text-body">Email: {user.email}</p>
+          </div>
+        </Card>
+      </div>
+      <div className="order-card" key={user.id}>
+        <Card
+          hoverable
+          style={{ maxWidth: '300px' }}
+        >
+          <div className="card-info">
+            <Meta title='Pedidos' />
+            <div className='orders-container'>
+              {user.Orders.map( order=>{
+                console.log(order)
+                return(
+                  <p key = {order.id}>Numero de pedido: {order.id}</p>
+                  
+                )
+              })}
+            </div>
+          </div>
+        </Card>
+      </div>
     </div>
   );
 }
