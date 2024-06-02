@@ -14,6 +14,12 @@ $mobile-breakpoint: 768px;
   align-items: center;
   flex-wrap: wrap;
 
+  .header-logo {
+    height: 80px; /* Incrementa la altura */
+    width: auto; /* Ajusta la proporción automáticamente */
+    margin-right: 1rem;
+  }
+
   a {
     color: $menu-text-color;
     text-decoration: none;
@@ -35,6 +41,11 @@ $mobile-breakpoint: 768px;
     flex-direction: column;
     align-items: flex-start;
 
+    .header-logo {
+      margin-bottom: 1rem;
+      height: 60px; /* Ajusta la altura para dispositivos móviles */
+    }
+
     a {
       padding: 0.5rem 0;
       width: 100%;
@@ -42,17 +53,3 @@ $mobile-breakpoint: 768px;
     }
   }
 }
-
-
-
-// @import '../../styles/colors';
-
-// .menu {
-//   background-color: $primary-color;
-//   a {
-//     color: $text-color;
-//     &:hover {
-//       color: $secondary-color;
-//     }
-//   }
-// }

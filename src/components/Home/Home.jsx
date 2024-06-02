@@ -1,28 +1,34 @@
-
 import React from 'react';
 import { Carousel } from 'antd';
+import './Home.scss';
+
+// Importa tus imágenes
+import image1 from './images/foto6.jpg';
+import image2 from './images/foto2.jpg';
+import image3 from './images/foto3.jpg';
+import image4 from './images/foto4.jpg';
 
 const contentStyle = {
   height: '80vh',
-  color: '#fff',
-  lineHeight: '80vh',
-  textAlign: 'center',
-  background: '#364d79',
+  width: '100%',
+  objectFit: 'cover'
 };
+
 const Home = () => (
   <Carousel autoplay>
     <div>
-      <h3 style={contentStyle}>1</h3>
+      <img src={image1} alt="Slide 1" style={contentStyle} />
     </div>
     <div>
-      <h3 style={contentStyle}>2</h3>
+      <img src={image2} alt="Slide 2" style={contentStyle} />
     </div>
     <div>
-      <h3 style={contentStyle}>3</h3>
+      <img src={image3} alt="Slide 3" style={contentStyle} />
     </div>
     <div>
-      <h3 style={contentStyle}>4</h3>
+      <img src={image4} alt="Slide 4" style={contentStyle} />
     </div>
   </Carousel>
 );
+
 export default Home;

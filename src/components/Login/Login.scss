@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: #393535;// Fondo gris claro para la página
+  
+    .ant-form {
+      background: #f0f2f5; // Fondo blanco para el formulario
+      padding: 2rem; // Padding interno del formulario
+      border-radius: 8px; // Bordes redondeados
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil
+  
+      .ant-form-item {
+        margin-bottom: 1rem; // Espacio entre los campos del formulario
+  
+        label {
+          font-weight: bold; // Etiquetas en negrita
+        }
+      }
+  
+      .ant-input,
+      .ant-input-password {
+        padding: 0.5rem; // Padding interno de los campos de entrada
+        border-radius: 4px; // Bordes redondeados
+      }
+  
+      .ant-btn-primary {
+        background-color: #000000d4; // Color de fondo del botón primario
+        border-color: #ffffff; // Color del borde del botón primario
+        padding: 0.5rem 2rem; // Padding interno del botón
+        font-size: 1rem; // Tamaño de fuente del botón
+        transition: background-color 0.3s ease; // Transición suave al cambiar el color de fondo
+  
+        &:hover {
+          background-color: #296882; // Color de fondo del botón al pasar el cursor
+          border-color: #296882; // Color del borde del botón al pasar el cursor
+        }
+      }
+    }
+  }
+  

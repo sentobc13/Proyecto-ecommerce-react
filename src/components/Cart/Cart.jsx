@@ -6,7 +6,7 @@ import './Cart.scss'
 import orderService from '../../services/OrderServices';
 
 const Cart = () => {
-  const { cart, clearCart } = useContext(ProductsContext); // Suponiendo que clearCart está disponible en el contexto
+  const { cart, clearCart } = useContext(ProductsContext); 
   console.log(cart);
 
   if (cart.length === 0) {
@@ -16,6 +16,7 @@ const Cart = () => {
           <Link to="/products">Buy Now</Link>
         </Button>
       </Empty>
+
     );
   }
 
