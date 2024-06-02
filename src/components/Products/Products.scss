@@ -63,7 +63,7 @@
     height: 20px;
   }
   
-  /*Hover*/
+  
   .card:hover {
     transform: translateY(-5px);
   }
@@ -73,7 +73,7 @@
     background-color: #296882;
   }
   
-  /* Responsive Design */
+  
   @media (min-width: 1200px) {
     .products-grid {
       grid-template-columns: repeat(4, 1fr);

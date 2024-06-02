@@ -3,13 +3,13 @@ import { Carousel } from 'antd';
 import './Home.scss';
 
 
-import image1 from './images/foto6.jpg';
+import image1 from './images/foto7.jpg';
 import image2 from './images/foto2.jpg';
-import image3 from './images/foto3.jpg';
-import image4 from './images/foto4.jpg';
+import image3 from './images/foto9.jpg';
+import image4 from './images/foto8.jpg';
 
 const contentStyle = {
-  height: '80vh',
+  height: '90vh',
   width: '100%',
   objectFit: 'cover'
 };
