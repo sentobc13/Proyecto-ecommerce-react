@@ -27,7 +27,7 @@ const Profile = () => {
         <Card
           hoverable
           style={{ maxWidth: '300px' }}
-          cover={<img  src={image} />}
+          cover={<img src={image} />}
         >
           <div className="card-info">
             <Meta title={user.name} />
