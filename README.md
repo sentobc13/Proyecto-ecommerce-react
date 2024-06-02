@@ -2,10 +2,9 @@
 
 Este proyecto es un frontend para un e-commerce de una tienda de ropa desarrollado en React. Los usuarios pueden registrarse, iniciar sesión, ver productos, añadirlos al carrito y crear pedidos utilizando una API desarrollada previamente en un proyecto de backend.
 
-![image](https://github.com/sentobc13/Proyecto-ecommerce-react/assets/160127899/36bad38b-fe6d-492b-aab8-01d5034a63b8)
+![Captura de pantalla 2024-06-02 232341](https://github.com/sentobc13/Proyecto-ecommerce-react/assets/160127899/548b9c4f-316e-49aa-b666-3383f63d42aa)
 
-## Caracterís
-ticas
+## Características
 
 - Registro de usuarios.
 - Login de usuarios.
