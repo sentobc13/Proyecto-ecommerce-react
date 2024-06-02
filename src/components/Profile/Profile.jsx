@@ -4,6 +4,8 @@ import { Card, Spin } from 'antd';
 import Meta from 'antd/es/card/Meta';
 import './Profile.scss'
 
+import image from './images/fotoprofile.jpg';
+
 const Profile = () => {
   const { getUserInfo, user, token } = useContext(UserContext);
 
@@ -25,7 +27,7 @@ const Profile = () => {
         <Card
           hoverable
           style={{ maxWidth: '300px' }}
-          cover={<img alt={user.name} src={user.image || 'https://via.placeholder.com/150'} />}
+          cover={<img  src={image} />}
         >
           <div className="card-info">
             <Meta title={user.name} />
