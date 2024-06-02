@@ -3,6 +3,7 @@ import { Card } from 'antd';
 import Meta from 'antd/es/card/Meta';
 import './Products.scss';
 import { ProductsContext } from '../../context/ProductsContext/ProductsState';
+import foto5 from '../Home/images/foto5.jpg'; 
 
 const Product = () => {
     const { products, addCart } = useContext(ProductsContext);
@@ -13,7 +14,7 @@ const Product = () => {
                 <Card
                     hoverable
                     style={{ width: '100%' }}
-                    cover={<img alt={product.name} src={product.image || 'https://via.placeholder.com/150'} />}  
+                    cover={<img alt={product.name} src={foto5} />} 
                 >
                     <div className="card-info">
                         <Meta title={product.name} />

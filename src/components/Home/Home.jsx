@@ -2,7 +2,7 @@ import React from 'react';
 import { Carousel } from 'antd';
 import './Home.scss';
 
-// Importa tus imágenes
+
 import image1 from './images/foto6.jpg';
 import image2 from './images/foto2.jpg';
 import image3 from './images/foto3.jpg';
